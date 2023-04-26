@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
-from rope import *
+from Ropes import *
 
 # Initiating Rope
 MyRope = Rope("")

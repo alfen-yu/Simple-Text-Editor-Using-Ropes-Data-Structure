@@ -7,3 +7,22 @@ A Rope data structure is a tree data structure which is used to store or manipul
 This data structure is widely used by softwares such as text editors like Sublime, email systems like Gmail and text buffers to handle large strings efficiently.
 
 ![image](https://user-images.githubusercontent.com/44427180/234474825-50e35162-c68c-441f-908a-b6aebd455a21.png)
+
+
+rope = Rope("Hello, world! ")
+
+# Search
+searchResult = rope.search(rope.root, "ello", 0)
+print(searchResult)
+
+# Insertion
+rope.insert(rope.root, "Yousuf", 14)
+
+# Deletion
+rope.delete(rope.root, 0, 14)
+
+# Replace
+rope.replace(rope.root, "Yousuf", "Uyghur")
+
+print(rope)
+print(rope.root.size)
