@@ -27,7 +27,7 @@ class TextEditor:
     self.status = StringVar()
 
     # Creating Titlebar
-    self.titlebar = Label(self.root, textvariable=self.title, font=("Sans", 12, "normal"), bd=0, relief=GROOVE, underline=None, background="#211f20", fg="white")
+    self.titlebar = Label(self.root, textvariable=self.title, font=("Sans", 12, "normal"), bd=0, relief=GROOVE, underline=None, background="#211f20", fg="white", pady=8)
     # Packing Titlebar to root window
     self.titlebar.pack(side=TOP,fill=BOTH)
     # Calling Settitle Function
@@ -80,7 +80,7 @@ class TextEditor:
     # Creating Scrollbar
     scrol_y = Scrollbar(self.root,orient=VERTICAL)
     # Creating Text Area
-    self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("Lucinda",11,"normal"),state="normal",relief=GROOVE, background="#262726", fg="white")
+    self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("Lucinda",11,"normal"),state="normal",relief=GROOVE, background="#262726", fg="white", UNDERLINE=None, border=0)
     # Packing scrollbar to root window
     scrol_y.pack(side=RIGHT,fill=Y)
     # Adding Scrollbar to text area
@@ -172,8 +172,8 @@ class TextEditor:
     try:
       # Asking for file name and type to save
       untitledfile = filedialog.asksaveasfilename(title = "Save file As",defaultextension=".txt",initialfile = "Untitled.txt",filetypes = (("All Files","*.*"),("Text Files","*.txt"),("Python Files","*.py")))
-      with open(untitledfile, "w") as file:
-        file.write(untitledfile)
+      # with open(untitledfile, "w") as file:
+      #   file.write(untitledfile)
       # Reading the data from Rope
       data = MyRope.root.value
       # opening File in write mode
