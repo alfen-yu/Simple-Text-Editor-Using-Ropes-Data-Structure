@@ -8,8 +8,8 @@ This data structure is widely used by softwares such as text editors like Sublim
 
 ![image](https://user-images.githubusercontent.com/44427180/234474825-50e35162-c68c-441f-908a-b6aebd455a21.png)
 
-
-rope = Rope("Hello, world! ")
+## Create Rope Object
+```rope = Rope("Hello, world! ")```
 
 ## Search
 ```searchResult = rope.search(rope.root, "ello", 0)```
