@@ -11,17 +11,17 @@ This data structure is widely used by softwares such as text editors like Sublim
 
 rope = Rope("Hello, world! ")
 
-# Search
+## Search
 searchResult = rope.search(rope.root, "ello", 0)
 print(searchResult)
 
-# Insertion
+## Insertion
 rope.insert(rope.root, "Yousuf", 14)
 
-# Deletion
+## Deletion
 rope.delete(rope.root, 0, 14)
 
-# Replace
+## Replace
 rope.replace(rope.root, "Yousuf", "Uyghur")
 
 print(rope)
