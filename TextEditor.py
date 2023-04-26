@@ -26,28 +26,27 @@ class TextEditor:
     # Declaring Status variable
     self.status = StringVar()
 
-
     # Creating Titlebar
-    self.titlebar = Label(self.root,textvariable=self.title,font=("Sans",12,"normal"),bd=1,relief=GROOVE)
+    self.titlebar = Label(self.root, textvariable=self.title, font=("Sans", 12, "normal"), bd=0, relief=GROOVE, underline=None, background="#211f20", fg="white")
     # Packing Titlebar to root window
     self.titlebar.pack(side=TOP,fill=BOTH)
     # Calling Settitle Function
     self.settitle()
 
     # Creating Statusbar
-    self.statusbar = Label(self.root,textvariable=self.status,font=("Arial",15,"bold"),bd=2,relief=GROOVE)
+    self.statusbar = Label(self.root,textvariable=self.status,font=("Sans",15,"normal"),bd=0,relief=GROOVE, bg="#211f20", fg="white")
     # Packing status bar to root window
     self.statusbar.pack(side=BOTTOM,fill=BOTH)
     # Initializing Status
-    self.status.set("Created with ")
+    self.status.set("Created with 💛 by Fahad, Kumail, Yousuf, and Essa")
 
     # Creating Menubar
-    self.menubar = Menu(self.root,font=("times new roman",15,"bold"),activebackground="skyblue")
+    self.menubar = Menu(self.root,font=("times new roman",15,"bold"))
     # Configuring menubar on root window
     self.root.config(menu=self.menubar)
 
     # Creating File Menu
-    self.filemenu = Menu(self.menubar,font=("times new roman",12,"bold"),activebackground="skyblue",tearoff=0)
+    self.filemenu = Menu(self.menubar,font=("Serif", 8, "normal"),activebackground="skyblue",tearoff=0)
     # Adding New file Command
     self.filemenu.add_command(label="New",accelerator="Ctrl+N",command=self.newfile)
     # Adding Open file Command
@@ -64,7 +63,7 @@ class TextEditor:
     self.menubar.add_cascade(label="File", menu=self.filemenu)
 
     # Creating Edit Menu
-    self.editmenu = Menu(self.menubar,font=("times new roman",12,"bold"),activebackground="skyblue",tearoff=0)
+    self.editmenu = Menu(self.menubar,font=("Serif",8,"normal"),activebackground="skyblue",tearoff=0)
     # Adding Cut text Command
     self.editmenu.add_command(label="Cut",accelerator="Ctrl+X",command=self.cut)
     # Adding Copy text Command
@@ -81,7 +80,7 @@ class TextEditor:
     # Creating Scrollbar
     scrol_y = Scrollbar(self.root,orient=VERTICAL)
     # Creating Text Area
-    self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("times new roman",15,"bold"),state="normal",relief=GROOVE)
+    self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("Lucinda",11,"normal"),state="normal",relief=GROOVE, background="#262726", fg="white")
     # Packing scrollbar to root window
     scrol_y.pack(side=RIGHT,fill=Y)
     # Adding Scrollbar to text area
@@ -160,6 +159,8 @@ class TextEditor:
         self.settitle()
         # Updating Status
         self.status.set("Saved Successfully")
+        with open(data, "w") as file:
+          file.write(data)
       else:
         self.saveasfile()
     except Exception as e:
@@ -171,6 +172,8 @@ class TextEditor:
     try:
       # Asking for file name and type to save
       untitledfile = filedialog.asksaveasfilename(title = "Save file As",defaultextension=".txt",initialfile = "Untitled.txt",filetypes = (("All Files","*.*"),("Text Files","*.txt"),("Python Files","*.py")))
+      with open(untitledfile, "w") as file:
+        file.write(untitledfile)
       # Reading the data from Rope
       data = MyRope.root.value
       # opening File in write mode
