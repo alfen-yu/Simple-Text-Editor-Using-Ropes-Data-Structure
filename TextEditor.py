@@ -17,7 +17,6 @@ class TextEditor:
     self.root = root
     # Title of the window
     self.root.title("Text Weavers")
-    # Window Geometry
     # Sets the state of the window to fullscreen
     self.root.state("zoomed")
     # Initializing filename
@@ -29,18 +28,18 @@ class TextEditor:
 
 
     # Creating Titlebar
-    self.titlebar = Label(self.root,textvariable=self.title,font=("times new roman",15,"bold"),bd=2,relief=GROOVE)
+    self.titlebar = Label(self.root,textvariable=self.title,font=("Sans",12,"normal"),bd=1,relief=GROOVE)
     # Packing Titlebar to root window
     self.titlebar.pack(side=TOP,fill=BOTH)
     # Calling Settitle Function
     self.settitle()
 
     # Creating Statusbar
-    self.statusbar = Label(self.root,textvariable=self.status,font=("times new roman",15,"bold"),bd=2,relief=GROOVE)
+    self.statusbar = Label(self.root,textvariable=self.status,font=("Arial",15,"bold"),bd=2,relief=GROOVE)
     # Packing status bar to root window
     self.statusbar.pack(side=BOTTOM,fill=BOTH)
     # Initializing Status
-    self.status.set("Welcome To Text Editor")
+    self.status.set("Created with ")
 
     # Creating Menubar
     self.menubar = Menu(self.root,font=("times new roman",15,"bold"),activebackground="skyblue")

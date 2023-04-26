@@ -12,17 +12,17 @@ This data structure is widely used by softwares such as text editors like Sublim
 rope = Rope("Hello, world! ")
 
 ## Search
-searchResult = rope.search(rope.root, "ello", 0)
-print(searchResult)
+```searchResult = rope.search(rope.root, "ello", 0)```
+```print(searchResult)```
 
 ## Insertion
-rope.insert(rope.root, "Yousuf", 14)
+```rope.insert(rope.root, "Yousuf", 14)```
 
 ## Deletion
-rope.delete(rope.root, 0, 14)
+```rope.delete(rope.root, 0, 14)```
 
 ## Replace
-rope.replace(rope.root, "Yousuf", "Uyghur")
+```rope.replace(rope.root, "Yousuf", "Uyghur")```
 
-print(rope)
-print(rope.root.size)
+```print(rope)```
+```print(rope.root.size)```
