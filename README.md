@@ -5,3 +5,5 @@
 A Rope data structure is a tree data structure which is used to store or manipulate large strings in a more efficient manner. It allows for operations like insertion, deletion, search and random access to be executed faster and much more efficiently in comparison to a traditional String.
 
 This data structure is widely used by softwares such as text editors like Sublime, email systems like Gmail and text buffers to handle large strings efficiently.
+
+![image](https://user-images.githubusercontent.com/44427180/234474825-50e35162-c68c-441f-908a-b6aebd455a21.png)
